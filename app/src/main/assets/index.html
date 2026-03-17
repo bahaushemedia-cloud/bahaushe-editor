@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#c0392b">
+<title>BAHAUSHE Editor</title>
+<style>
+@font-face {
+  font-family:'BAHAUSHE';
+  src:url('data:font/otf;base64,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') format('opentype');
+}
+
+:root {
+  --bg:#1c1c1c; --surface:#242424; --panel:#2c2c2c; --border:#3a3a3a;
+  --red:#c0392b; --red-dark:#962d22; --red-dim:#4a1510;
+  --text:#e8e0d0; --muted:#5a5a5a; --key:#2e2e2e; --r:5px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:Georgia,serif;overflow:hidden}
+body{display:flex;flex-direction:column;height:100dvh}
+
+/* ── Header ── */
+header{
+  background:var(--red);display:flex;align-items:center;
+  justify-content:space-between;padding:0 10px;height:46px;flex-shrink:0;position:relative;
+}
+.logo{font-family:'BAHAUSHE',serif;font-size:24px;color:#fff;letter-spacing:2px}
+.logo-sub{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.65);margin-top:1px}
+.hbtns{display:flex;gap:5px;align-items:center}
+.hbtn{
+  background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.25);
+  color:#fff;border-radius:var(--r);padding:5px 9px;font-size:11px;
+  cursor:pointer;font-family:Georgia,serif;letter-spacing:1px;
+  -webkit-tap-highlight-color:transparent;
+}
+.hbtn:active{background:rgba(0,0,0,0.5)}
+.hbtn.lang-active{background:rgba(0,0,0,0.45);border-color:rgba(255,255,255,0.6)}
+
+/* ── Language picker sheet ── */
+.lang-sheet{
+  position:fixed;top:46px;right:0;
+  background:var(--surface);border:1px solid var(--border);border-top:none;
+  border-radius:0 0 var(--r) var(--r);z-index:600;display:none;
+  min-width:180px;box-shadow:0 6px 20px rgba(0,0,0,0.6);
+}
+.lang-sheet.show{display:block}
+.lang-opt{
+  padding:12px 16px;font-size:12px;cursor:pointer;color:var(--text);
+  border-bottom:1px solid var(--border);letter-spacing:1px;
+  font-family:Georgia,serif;display:flex;align-items:center;gap:10px;
+  -webkit-tap-highlight-color:transparent;
+}
+.lang-opt:last-child{border-bottom:none}
+.lang-opt:active{background:var(--red-dim);color:var(--red)}
+.lang-opt.active{background:var(--red-dim);color:var(--red);border-left:3px solid var(--red)}
+.lang-flag{font-size:16px}
+
+/* ── Tabs ── */
+.tabs{display:flex;background:var(--surface);border-bottom:2px solid var(--red);flex-shrink:0}
+.tab{
+  flex:1;padding:9px 0;font-size:10px;letter-spacing:.8px;text-align:center;
+  color:var(--muted);cursor:pointer;border:none;background:transparent;
+  font-family:Georgia,serif;-webkit-tap-highlight-color:transparent;transition:color .15s;
+}
+.tab.on{color:var(--red);border-bottom:2px solid var(--red);margin-bottom:-2px}
+
+/* ── Panels ── */
+.panel{flex:1;display:none;flex-direction:column;overflow:hidden}
+.panel.on{display:flex}
+
+/* ── WRITE panel ── */
+.doc-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 12px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.doc-title-input{
+  background:transparent;border:none;color:var(--text);font-size:13px;
+  font-family:Georgia,serif;outline:none;flex:1;-webkit-user-select:text;user-select:text;
+}
+.meta-right{display:flex;gap:8px;align-items:center}
+.char-ct{font-size:10px;color:var(--muted)}
+.save-btn{
+  background:var(--red);border:none;color:#fff;border-radius:var(--r);
+  padding:5px 11px;font-size:11px;cursor:pointer;font-family:Georgia,serif;
+  -webkit-tap-highlight-color:transparent;letter-spacing:.5px;
+}
+.save-btn:active{background:var(--red-dark)}
+
+#editor{
+  flex:1;padding:14px;font-family:'BAHAUSHE',serif;font-size:23px;line-height:1.0;
+  color:var(--text);direction:rtl;text-align:right;unicode-bidi:bidi-override;
+  overflow-y:auto;outline:none;caret-color:var(--red);
+  -webkit-user-select:text;user-select:text;background:var(--bg);word-break:break-all;
+}
+#editor.latin-mode{
+  font-family:Georgia,serif;font-size:16px;direction:ltr;
+  text-align:left;unicode-bidi:normal;
+}
+#editor:empty::before{content:attr(data-ph);color:var(--muted);font-family:Georgia,serif;font-size:13px}
+
+/* ── Dual mode ── */
+.dual-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:5px 10px;flex-shrink:0;
+}
+.dual-toggle{
+  background:var(--key);border:1px solid var(--border);border-radius:var(--r);
+  color:var(--muted);font-size:10px;padding:4px 10px;cursor:pointer;
+  font-family:Georgia,serif;letter-spacing:1px;-webkit-tap-highlight-color:transparent;
+}
+.dual-toggle.on{background:var(--red-dim);color:var(--red);border-color:var(--red)}
+.dual-hint{font-size:10px;color:var(--muted)}
+.dual-panes{display:flex;flex-direction:column;flex:1;overflow:hidden}
+#editor-latin{
+  flex:1;padding:10px 14px;background:var(--surface);border-bottom:2px solid var(--red);
+  font-family:Georgia,serif;font-size:15px;line-height:1.6;color:var(--text);
+  direction:ltr;text-align:left;overflow-y:auto;outline:none;caret-color:var(--red);
+  -webkit-user-select:text;user-select:text;display:none;
+}
+#editor-latin:empty::before{content:attr(data-ph);color:var(--muted);font-size:13px}
+#editor.dual{flex:1}
+
+/* ── Keyboard ── */
+.keyboard{flex-shrink:0;background:var(--panel);border-top:2px solid var(--red);padding:6px 5px 8px}
+.vowel-row{display:flex;justify-content:center;gap:5px;margin-bottom:6px;position:relative}
+.vtog{
+  background:var(--red-dim);border:1px solid var(--red);border-radius:var(--r);
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;width:54px;height:38px;position:relative;
+  -webkit-tap-highlight-color:transparent;
+}
+.vtog:active{background:var(--red)}
+.vtog .vg{font-family:'BAHAUSHE',serif;font-size:17px;color:#fff;line-height:1}
+.vtog .vl{font-size:8px;color:rgba(255,255,255,0.55)}
+.vpopup{
+  position:absolute;bottom:46px;background:var(--surface);border:1px solid var(--red);
+  border-radius:var(--r);display:none;z-index:200;padding:4px;gap:4px;
+  flex-direction:column;align-items:stretch;min-width:70px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+}
+.vpopup.show{display:flex}
+.vpop-btn{
+  background:var(--key);border:1px solid var(--border);border-radius:var(--r);
+  padding:6px 10px;cursor:pointer;display:flex;flex-direction:column;
+  align-items:center;-webkit-tap-highlight-color:transparent;
+}
+.vpop-btn:active{background:var(--red-dim);border-color:var(--red)}
+.vpop-btn .vg{font-family:'BAHAUSHE',serif;font-size:20px;color:var(--text)}
+.vpop-btn .vl{font-size:9px;color:var(--muted);margin-top:1px}
+.kgrid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:5px}
+.key{
+  background:var(--key);border:1px solid var(--border);border-radius:var(--r);
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;aspect-ratio:1/1.1;-webkit-tap-highlight-color:transparent;
+}
+.key:active{background:var(--red-dim);border-color:var(--red)}
+.kg{font-family:'BAHAUSHE',serif;font-size:17px;color:var(--text);line-height:1}
+.kl{font-size:7px;color:var(--muted)}
+.numgrid{display:none;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:5px}
+.numgrid.show{display:grid}
+.nkey{
+  background:var(--key);border:1px solid var(--border);border-radius:var(--r);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  height:34px;font-size:14px;color:var(--text);-webkit-tap-highlight-color:transparent;
+  font-family:Georgia,serif;
+}
+.nkey:active{background:var(--red-dim)}
+.urow{display:flex;gap:4px}
+.ukey{
+  background:var(--key);border:1px solid var(--border);border-radius:var(--r);
+  padding:7px 0;cursor:pointer;font-size:10px;color:var(--muted);text-align:center;
+  font-family:Georgia,serif;flex:1;-webkit-tap-highlight-color:transparent;letter-spacing:.5px;
+}
+.ukey:active{background:var(--red-dim)}
+.ukey.tog-on{background:var(--red-dim);color:var(--red);border-color:var(--red)}
+.ukey.wide{flex:2.5}
+.ukey.del{color:var(--red)}
+
+/* ── TRANSLATE panel ── */
+.tbar{background:var(--red);padding:9px 12px;font-size:11px;color:#fff;letter-spacing:1px;flex-shrink:0}
+.tarea{
+  flex:1;padding:12px;background:var(--surface);border:none;
+  border-bottom:1px solid var(--border);color:var(--text);font-size:15px;
+  font-family:Georgia,serif;outline:none;resize:none;direction:ltr;
+  -webkit-user-select:text;user-select:text;min-height:100px;max-height:160px;
+}
+.tarea::placeholder{color:var(--muted)}
+.tconvert-btn{
+  background:var(--red);border:none;color:#fff;padding:13px;font-size:13px;
+  cursor:pointer;font-family:Georgia,serif;letter-spacing:1px;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+}
+.tconvert-btn:active{background:var(--red-dark)}
+.tresult{
+  flex:1;padding:12px;font-family:'BAHAUSHE',serif;font-size:23px;line-height:1.0;
+  color:var(--text);direction:rtl;text-align:right;unicode-bidi:bidi-override;
+  overflow-y:auto;background:var(--bg);word-break:break-all;
+  -webkit-user-select:text;user-select:text;
+}
+.tresult:empty::before{content:attr(data-ph);color:var(--muted);font-family:Georgia,serif;font-size:13px}
+.tactions{display:flex;flex-shrink:0}
+.tact-btn{
+  flex:1;background:var(--surface);border:none;border-top:1px solid var(--border);
+  color:var(--muted);padding:11px;font-size:11px;cursor:pointer;
+  font-family:Georgia,serif;letter-spacing:1px;-webkit-tap-highlight-color:transparent;
+}
+.tact-btn:active{background:var(--red-dim);color:var(--red)}
+
+/* ── SAVED panel ── */
+.saved-header{
+  background:var(--red);padding:10px 12px;display:flex;
+  justify-content:space-between;align-items:center;flex-shrink:0;
+}
+.saved-header span{font-size:12px;color:#fff;letter-spacing:1px}
+.saved-list{flex:1;overflow-y:auto}
+.saved-empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:13px;line-height:1.8}
+.doc-item{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:12px;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:center;
+  -webkit-tap-highlight-color:transparent;
+}
+.doc-item:active{background:var(--panel)}
+.doc-info{flex:1;min-width:0}
+.doc-name{font-size:13px;color:var(--text);margin-bottom:4px}
+.doc-preview{
+  font-family:'BAHAUSHE',serif;font-size:14px;color:var(--muted);
+  direction:rtl;unicode-bidi:bidi-override;overflow:hidden;
+  white-space:nowrap;text-overflow:ellipsis;
+}
+.doc-date{font-size:10px;color:var(--muted);margin-top:3px}
+.doc-actions{display:flex;gap:6px;align-items:center;margin-right:4px}
+.doc-del{
+  background:var(--red-dim);border:1px solid var(--red-dim);color:var(--red);
+  border-radius:var(--r);padding:5px 9px;font-size:11px;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;font-family:Georgia,serif;
+}
+.doc-del:active{background:var(--red);color:#fff}
+
+/* ── READ (KARANTA) panel ── */
+.read-toolbar{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--red);padding:8px 12px;flex-shrink:0;
+}
+.read-toolbar span{font-size:11px;color:#fff;letter-spacing:1px}
+.read-toolbtns{display:flex;gap:6px}
+.read-tbtn{
+  background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.2);
+  color:#fff;border-radius:var(--r);padding:4px 10px;font-size:10px;
+  cursor:pointer;font-family:Georgia,serif;-webkit-tap-highlight-color:transparent;
+  letter-spacing:.5px;
+}
+.read-tbtn:active{background:rgba(0,0,0,0.5)}
+.read-size-row{
+  display:flex;align-items:center;gap:8px;padding:6px 12px;
+  background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.read-size-row label{font-size:10px;color:var(--muted)}
+#read-size-slider{flex:1;accent-color:var(--red)}
+.read-content{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:20px}
+.read-doc-title{
+  font-size:15px;color:var(--red);letter-spacing:1px;
+  border-bottom:1px solid var(--border);padding-bottom:8px;font-family:Georgia,serif;
+}
+.read-section-label{font-size:9px;letter-spacing:3px;color:var(--muted);margin-bottom:6px}
+.read-latin-text{
+  font-family:Georgia,serif;line-height:1.8;color:var(--text);
+  direction:ltr;text-align:left;background:var(--surface);
+  padding:12px;border-radius:var(--r);border:1px solid var(--border);
+}
+.read-bahaushe-text{
+  font-family:'BAHAUSHE',serif;line-height:1.1;color:var(--text);
+  direction:rtl;text-align:right;unicode-bidi:bidi-override;
+  background:var(--surface);padding:12px;border-radius:var(--r);
+  border:1px solid var(--border);word-break:break-all;
+}
+.read-empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:13px;line-height:1.8}
+.read-edit-hint{
+  font-size:10px;color:var(--muted);text-align:center;padding:6px;
+  border-top:1px solid var(--border);flex-shrink:0;
+}
+
+/* ── Toast ── */
+#toast{
+  position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(10px);
+  background:var(--red);color:#fff;font-size:12px;padding:8px 18px;
+  border-radius:20px;opacity:0;transition:opacity .2s,transform .2s;
+  pointer-events:none;font-family:Georgia,serif;z-index:999;white-space:nowrap;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+#json-import-input{display:none}
+
+@media print{
+  header,.tabs,.keyboard,.doc-meta,#toast{display:none!important}
+  .panel{display:block!important}
+  #panel-write{display:block!important}
+  #editor{font-size:14pt;line-height:1.6;color:#000;background:#fff;height:auto;overflow:visible;padding:15mm;unicode-bidi:bidi-override;direction:rtl}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo" id="logo-glyph"></div>
+    <div class="logo-sub">BAHAUSHE EDITOR</div>
+  </div>
+  <div class="hbtns">
+    <button class="hbtn lang-active" id="lang-btn" onclick="toggleLangSheet()">🌐 EN</button>
+    <button class="hbtn" onclick="saveJSON()" data-i18n="btn_json">JSON</button>
+    <button class="hbtn" onclick="savePDF()" data-i18n="btn_pdf">PDF</button>
+    <button class="hbtn" onclick="newDoc()" data-i18n="btn_new">NEW</button>
+  </div>
+</header>
+
+<!-- Language picker sheet -->
+<div class="lang-sheet" id="lang-sheet">
+  <div class="lang-opt active" id="lopt-en" onclick="selectLang('en')">
+    <span class="lang-flag">🇬🇧</span> <span data-i18n="lang_en">English</span>
+  </div>
+  <div class="lang-opt" id="lopt-ha" onclick="selectLang('ha')">
+    <span class="lang-flag">🇳🇬</span> <span data-i18n="lang_ha">Hausa (Latin)</span>
+  </div>
+  <div class="lang-opt" id="lopt-hs" onclick="selectLang('hs')">
+    <span class="lang-flag">🇳🇬</span> <span data-i18n="lang_hs">Hausa (Script)</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab on" id="tab-write"   onclick="switchTab('write')"   data-i18n="tab_write">WRITE</button>
+  <button class="tab"    id="tab-trans"   onclick="switchTab('trans')"   data-i18n="tab_trans">TRANSLATE</button>
+  <button class="tab"    id="tab-saved"   onclick="switchTab('saved')"   data-i18n="tab_saved">SAVED</button>
+  <button class="tab"    id="tab-karanta" onclick="switchTab('karanta')" data-i18n="tab_read">READ</button>
+</div>
+
+<!-- WRITE -->
+<div class="panel on" id="panel-write">
+  <div class="doc-meta">
+    <input class="doc-title-input" id="doc-title" data-i18n-ph="doc_placeholder" placeholder="Title..." value="New Document"/>
+    <div class="meta-right">
+      <span class="char-ct"><span data-i18n="chars_label">Chars:</span> <span id="charct">0</span></span>
+      <button class="save-btn" onclick="saveDoc()" data-i18n="btn_save">SAVE</button>
+    </div>
+  </div>
+  <div class="dual-bar" id="dual-bar">
+    <button class="dual-toggle" id="dual-tog" onclick="toggleDual()" data-i18n="dual_btn">⊞ DUAL</button>
+    <span class="dual-hint" id="dual-hint" data-i18n="dual_hint_off">Single pane</span>
+  </div>
+  <div class="dual-panes" id="dual-panes">
+    <div id="editor-latin" contenteditable="true" spellcheck="false" data-ph="Type Hausa here..."></div>
+    <div id="editor" contenteditable="true" spellcheck="false" inputmode="none" data-ph="Start writing..."></div>
+  </div>
+  <div class="keyboard" id="keyboard">
+    <div class="vowel-row" id="vowel-row"></div>
+    <div class="kgrid" id="kgrid"></div>
+    <div class="numgrid" id="numgrid"></div>
+    <div class="urow">
+      <button class="ukey" id="rtl-btn" onclick="ins('\u200F')" data-i18n="rtl_btn">RTL</button>
+      <button class="ukey" onclick="mv(-1)">&#8592;</button>
+      <button class="ukey" onclick="mv(1)">&#8594;</button>
+      <button class="ukey wide" onclick="ins(' ')" data-i18n="space_btn">SPACE</button>
+      <button class="ukey" id="lat-tog" onclick="toggleLatin()" data-i18n="lat_btn">BAHA</button>
+      <button class="ukey" id="num-tog" onclick="toggleNums()" data-i18n="num_btn">123</button>
+      <button class="ukey del"
+        onpointerdown="startDel(event)" onpointerup="stopDel()" onpointerleave="stopDel()">&#9003;</button>
+    </div>
+  </div>
+</div>
+
+<!-- TRANSLATE -->
+<div class="panel" id="panel-trans">
+  <div class="tbar" data-i18n="trans_bar">HAUSA → BAHAUSHE SCRIPT</div>
+  <textarea class="tarea" id="tarea" data-i18n-ph="trans_ph"
+    placeholder="Type or paste Hausa text here..."></textarea>
+  <button class="tconvert-btn" onclick="doTranslit()" data-i18n="btn_convert">▶ CONVERT TO BAHAUSHE</button>
+  <div class="tresult" id="tresult" dir="rtl" data-ph="Conversion result will appear here..."></div>
+  <div class="tactions">
+    <button class="tact-btn" onclick="copyTranslit()" data-i18n="btn_copy">COPY</button>
+    <button class="tact-btn" onclick="sendToEditor()" data-i18n="btn_send">→ EDITOR</button>
+    <button class="tact-btn" onclick="clearTranslit()" data-i18n="btn_clear">CLEAR</button>
+  </div>
+</div>
+
+<!-- SAVED -->
+<div class="panel" id="panel-saved">
+  <div class="saved-header">
+    <span data-i18n="saved_hdr">SAVED DOCUMENTS</span>
+    <span id="doc-count" style="font-size:10px;color:rgba(255,255,255,0.6)"></span>
+  </div>
+  <div class="saved-list" id="saved-list"></div>
+</div>
+
+<!-- READ -->
+<div class="panel" id="panel-karanta">
+  <div class="read-toolbar">
+    <span data-i18n="tab_read">READ</span>
+    <div class="read-toolbtns">
+      <button class="read-tbtn" onclick="importJSON()" data-i18n="btn_import">↓ JSON</button>
+      <button class="read-tbtn" onclick="switchTab('saved')" data-i18n="tab_saved">SAVED ☰</button>
+    </div>
+  </div>
+  <div class="read-size-row">
+    <label data-i18n="size_label">FONT SIZE</label>
+    <input type="range" id="read-size-slider" min="12" max="36" value="20"
+           oninput="updateReadSize(this.value)">
+    <label id="read-size-val">20px</label>
+  </div>
+  <div class="read-content" id="read-content">
+    <div class="read-empty" id="read-empty-msg" data-i18n="read_empty">Select from SAVED or import JSON.<br><br>Double-tap to edit.</div>
+  </div>
+  <div class="read-edit-hint" data-i18n="edit_hint">Double-tap ✎ to edit</div>
+</div>
+
+<input type="file" id="json-import-input" accept=".json" onchange="handleJSONImport(event)">
+<div id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// TRANSLITERATION ENGINE (ported from Python)
+// ═══════════════════════════════════════════════════════
+const CONS_MAP = [
+  ["sh","\ue016"],["ts","\ue013"],["ky","\ue00e"],["kw","\ue010"],
+  ["gy","\ue017"],["gw","\ue01e"],["\u0199w","\ue019"],["\u0199y","\ue009"],
+  ["fy","\ue01c"],["hw","\ue015"],["ct","\ue007"],
+  ["h","\ue000"],["s","\ue001"],["d","\ue002"],["b","\ue003"],
+  ["\u0199","\ue004"],["g","\ue005"],["\u0253","\ue006"],["r","\ue008"],
+  ["k","\ue00a"],["j","\ue00b"],["t","\ue00c"],["\u0257","\ue00d"],
+  ["n","\ue00f"],["z","\ue011"],["c","\ue012"],["y","\ue014"],
+  ["f","\ue018"],["l","\ue01a"],["w","\ue01b"],["\u01b4","\ue01d"],["m","\ue01f"],
+];
+
+const VOWS_MAP = {
+  "a":"\ue020","\u0101":"\ue021","u":"\ue022","\u016b":"\ue023",
+  "o":"\ue024","\u014d":"\ue025","i":"\ue026","\u012b":"\ue027",
+  "e":"\ue028","\u0113":"\ue029",
+};
+
+const RTL_MARK = "\u200f";
+const PUNCT_MAP = { ",":"\u060c", "?":"\u061f", ";":"\u061b" };
+const PUNCT_SET = new Set(['.','!',';',':','-','(',')','`','\u2014','\u2015','\u2026','\u201c','\u201d']);
+
+function transliterate(text) {
+  const t = text.toLowerCase();
+  const out = [];
+  let i = 0;
+  while (i < t.length) {
+    if (VOWS_MAP[t[i]]) { out.push(VOWS_MAP[t[i]]); i++; continue; }
+    let matched = false;
+    for (const [lat, pua] of CONS_MAP) {
+      if (t.slice(i, i + lat.length) === lat) {
+        out.push(pua); i += lat.length; matched = true; break;
+      }
+    }
+    if (!matched) {
+      const ch = t[i];
+      if (PUNCT_MAP[ch]) out.push(RTL_MARK + PUNCT_MAP[ch] + RTL_MARK);
+      else if (PUNCT_SET.has(ch)) out.push(RTL_MARK + ch + RTL_MARK);
+      else out.push(ch);
+      i++;
+    }
+  }
+  return out.join('');
+}
+
+// ═══════════════════════════════════════════════════════
+// CHARACTER DATA
+// ═══════════════════════════════════════════════════════
+const CONSONANTS = [
+  [0xE000,"h"],[0xE001,"s"],[0xE002,"d"],[0xE003,"b"],
+  [0xE004,"\u0199"],[0xE005,"g"],[0xE006,"\u0253"],[0xE007,"ct"],
+  [0xE008,"r"],[0xE009,"\u0199y"],[0xE00A,"k"],[0xE00B,"j"],
+  [0xE00C,"t"],[0xE00D,"\u0257"],[0xE00E,"ky"],[0xE00F,"n"],
+  [0xE010,"kw"],[0xE011,"z"],[0xE012,"c"],[0xE013,"ts"],
+  [0xE014,"y"],[0xE015,"hw"],[0xE016,"sh"],[0xE017,"gy"],
+  [0xE018,"f"],[0xE019,"\u0199w"],[0xE01A,"l"],[0xE01B,"w"],
+  [0xE01C,"fy"],[0xE01D,"\u01b4"],[0xE01E,"gw"],[0xE01F,"m"],
+];
+
+const VOWEL_PAIRS = [
+  [0xE020,"a",0xE021,"\u0101"],
+  [0xE022,"u",0xE023,"\u016b"],
+  [0xE024,"o",0xE025,"\u014d"],
+  [0xE026,"i",0xE027,"\u012b"],
+  [0xE028,"e",0xE029,"\u0113"],
+];
+
+// ═══════════════════════════════════════════════════════
+// i18n STRINGS
+// ═══════════════════════════════════════════════════════
+const STRINGS = {
+  en: {
+    tab_write:"WRITE", tab_trans:"TRANSLATE", tab_saved:"SAVED", tab_read:"READ",
+    btn_json:"JSON", btn_pdf:"PDF", btn_new:"NEW",
+    doc_placeholder:"Title...", doc_default:"New Document",
+    chars_label:"Chars:", btn_save:"SAVE",
+    dual_btn:"\u229e DUAL", dual_hint_off:"Single pane",
+    dual_hint_on:"Type Latin above \u2192 BAHAUSHE auto-converts",
+    write_ph:"Start writing...", latin_ph:"Type Hausa here...",
+    trans_bar:"HAUSA \u2192 BAHAUSHE SCRIPT",
+    trans_ph:"Type or paste Hausa text here...",
+    btn_convert:"\u25b6 CONVERT TO BAHAUSHE",
+    result_ph:"Conversion result will appear here...",
+    btn_copy:"COPY", btn_send:"\u2192 EDITOR", btn_clear:"CLEAR",
+    saved_hdr:"SAVED DOCUMENTS",
+    saved_empty:"No documents saved yet.\n\nWrite something and tap SAVE.",
+    tab_read2:"READ", btn_import:"\u2193 JSON", size_label:"FONT SIZE",
+    read_empty:"Select from SAVED or import JSON.\n\nDouble-tap text to edit.",
+    edit_hint:"Double-tap \u270e to edit",
+    docs_suffix:" documents",
+    toast_saved:"Saved \u2713", toast_new:"New document",
+    toast_empty:"Document is empty \u2013 write something first",
+    toast_copy_ok:"Copied!", toast_copy_fail:"Copy failed",
+    toast_sent:"Sent to editor", toast_no_result:"No result to copy",
+    toast_write_1st:"Write something first",
+    toast_json_dl:"JSON downloaded \u2193",
+    toast_json_ok:"JSON loaded \u2713",
+    toast_json_err:"Error: not a valid JSON file",
+    toast_deleted:"Document deleted", toast_opened:"Document opened",
+    toast_edit:"Edit mode \u270e",
+    lat_btn:"BAHA", num_btn:"123", rtl_btn:"RTL", space_btn:"SPACE",
+    lang_en:"English", lang_ha:"Hausa (Latin)", lang_hs:"Hausa (Script)",
+  },
+  ha: {
+    tab_write:"RUBUTA", tab_trans:"FASSARA", tab_saved:"AJIYE", tab_read:"KARANTA",
+    btn_json:"JSON", btn_pdf:"PDF", btn_new:"SABON",
+    doc_placeholder:"Suna...", doc_default:"Sabon Takarda",
+    chars_label:"Haruffa:", btn_save:"AJIYE",
+    dual_btn:"\u229e BIYU", dual_hint_off:"Rubutu \u0257aya",
+    dual_hint_on:"Rubuta Latin sama \u2192 BAHAUSHE na canzawa kai tsaye",
+    write_ph:"Fara rubutu...", latin_ph:"Rubuta Hausa a nan...",
+    trans_bar:"HAUSA \u2192 BAHAUSHE RUBUTUN",
+    trans_ph:"Rubuta ko liq\u00f3 rubutun Hausa a nan...",
+    btn_convert:"\u25b6 FASSARA zuwa BAHAUSHE",
+    result_ph:"Sakamakon fassara zai bayyana a nan...",
+    btn_copy:"KWAFI", btn_send:"\u2192 RUBUTA", btn_clear:"SHARE",
+    saved_hdr:"TAKARDUNA AJIYE",
+    saved_empty:"Babu takardun da aka ajiye tukuna.\n\nRubuta wani abu kuma ka danna AJIYE.",
+    tab_read2:"KARANTA", btn_import:"\u2193 JSON", size_label:"GIRMAN RUBUTU",
+    read_empty:"Za\u0253i takarda daga AJIYE ko shigo da JSON.\n\nTa\u0253a sau biyu don gyara.",
+    edit_hint:"Ta\u0253a sau biyu \u270e don gyara",
+    docs_suffix:" takarda",
+    toast_saved:"An ajiye \u2713", toast_new:"Sabon takarda",
+    toast_empty:"Takarda fata ce \u2013 rubuta wani abu",
+    toast_copy_ok:"An kwafi!", toast_copy_fail:"Kwafi ya kasa",
+    toast_sent:"An aika wa rubutu", toast_no_result:"Babu sakamakon fassara",
+    toast_write_1st:"Rubuta wani abu da farko",
+    toast_json_dl:"JSON an sauke \u2193",
+    toast_json_ok:"JSON an loda \u2713",
+    toast_json_err:"Kuskure: ba JSON ne mai inganci",
+    toast_deleted:"An share takarda", toast_opened:"Takarda tana bude",
+    toast_edit:"Yanayin gyara \u270e",
+    lat_btn:"BAHA", num_btn:"123", rtl_btn:"RTL", space_btn:"SARARI",
+    lang_en:"Turanci", lang_ha:"Hausa (Latin)", lang_hs:"Hausa (Rubutu)",
+  }
+};
+
+// Keys that are never transliterated even in hs mode
+const NO_TRANSLIT = new Set([
+  'btn_json','btn_pdf','rtl_btn','num_btn','lat_btn','btn_import',
+  'space_btn'
+]);
+
+// ═══════════════════════════════════════════════════════
+// LANGUAGE SYSTEM
+// ═══════════════════════════════════════════════════════
+let currentLang = 'en';
+
+function t(key) {
+  const base = currentLang === 'en' ? STRINGS.en : STRINGS.ha;
+  const str = base[key] || key;
+  if (currentLang === 'hs' && !NO_TRANSLIT.has(key)) {
+    return transliterate(str);
+  }
+  return str;
+}
+
+function toggleLangSheet() {
+  const sheet = document.getElementById('lang-sheet');
+  sheet.classList.toggle('show');
+}
+
+function selectLang(code) {
+  currentLang = code;
+  document.getElementById('lang-sheet').classList.remove('show');
+  // Update lang button label
+  const labels = { en:'🌐 EN', ha:'🌐 HA', hs:'🌐 HS' };
+  document.getElementById('lang-btn').textContent = labels[code];
+  // Highlight active option
+  ['en','ha','hs'].forEach(c => {
+    document.getElementById('lopt-' + c).classList.toggle('active', c === code);
+  });
+  applyLang();
+}
+
+function applyLang() {
+  // Update all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    el.textContent = t(key);
+  });
+  // Update placeholders (input and contenteditable via data-ph)
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    const val = t(key);
+    el.setAttribute('placeholder', val);
+  });
+  // Contenteditable placeholders
+  document.getElementById('editor').setAttribute('data-ph', t('write_ph'));
+  document.getElementById('editor-latin').setAttribute('data-ph', t('latin_ph'));
+  document.getElementById('tresult').setAttribute('data-ph', t('result_ph'));
+  // Dynamic elements
+  const dualHintKey = dualMode ? 'dual_hint_on' : 'dual_hint_off';
+  document.getElementById('dual-hint').textContent = t(dualHintKey);
+  document.getElementById('dual-tog').textContent = t('dual_btn');
+  const latBtn = document.getElementById('lat-tog');
+  if (latBtn) latBtn.textContent = latinMode ? 'LAT' : t('lat_btn');
+  const numBtn = document.getElementById('num-tog');
+  if (numBtn) numBtn.textContent = numsMode ? (currentLang === 'en' ? 'ABC' : t('tab_write').slice(0,3)) : t('num_btn');
+  // Update doc title placeholder
+  document.getElementById('doc-title').setAttribute('placeholder', t('doc_placeholder'));
+  // Refresh saved list if visible
+  if (document.getElementById('panel-saved').classList.contains('on')) loadSaved();
+}
+
+// Close lang sheet on outside tap
+document.addEventListener('pointerdown', function(e) {
+  if (!e.target.closest('#lang-sheet') && !e.target.closest('#lang-btn')) {
+    document.getElementById('lang-sheet').classList.remove('show');
+  }
+});
+
+// ═══════════════════════════════════════════════════════
+// EDITOR STATE
+// ═══════════════════════════════════════════════════════
+const editor      = document.getElementById('editor');
+let latinMode     = false;
+let numsMode      = false;
+let dualMode      = false;
+let currentDocId  = null;
+let translitTimer = null;
+let readFontSize  = 20;
+let currentReadDoc= null;
+
+// ═══════════════════════════════════════════════════════
+// KEYBOARD BUILDERS
+// ═══════════════════════════════════════════════════════
+function buildLogo() {
+  document.getElementById('logo-glyph').textContent =
+    String.fromCodePoint(0xE003) + String.fromCodePoint(0xE000);
+}
+
+function buildVowels() {
+  const row = document.getElementById('vowel-row');
+  VOWEL_PAIRS.forEach(function(pair, idx) {
+    const short = String.fromCodePoint(pair[0]);
+    const long  = String.fromCodePoint(pair[2]);
+    const wrap  = document.createElement('div');
+    wrap.style.position = 'relative';
+    const btn = document.createElement('button');
+    btn.className = 'vtog';
+    btn.innerHTML = '<span class="vg">'+short+'</span><span class="vl">'+pair[1]+'</span>';
+    const popup = document.createElement('div');
+    popup.className = 'vpopup'; popup.id = 'vp-'+idx;
+    const bs = document.createElement('button');
+    bs.className = 'vpop-btn';
+    bs.innerHTML = '<span class="vg">'+short+'</span><span class="vl">'+pair[1]+' (short)</span>';
+    bs.addEventListener('pointerdown', function(e){ e.preventDefault(); ins(short); closeAllPopups(); });
+    const bl = document.createElement('button');
+    bl.className = 'vpop-btn';
+    bl.innerHTML = '<span class="vg">'+long+'</span><span class="vl">'+pair[3]+' (long)</span>';
+    bl.addEventListener('pointerdown', function(e){ e.preventDefault(); ins(long); closeAllPopups(); });
+    popup.appendChild(bs); popup.appendChild(bl);
+    btn.addEventListener('pointerdown', function(e){
+      e.preventDefault();
+      const wasOpen = popup.classList.contains('show');
+      closeAllPopups();
+      if (!wasOpen) popup.classList.add('show');
+    });
+    wrap.appendChild(btn); wrap.appendChild(popup); row.appendChild(wrap);
+  });
+}
+
+function closeAllPopups() {
+  document.querySelectorAll('.vpopup').forEach(p => p.classList.remove('show'));
+}
+document.addEventListener('pointerdown', function(e){
+  if (!e.target.closest('.vtog') && !e.target.closest('.vpopup')) closeAllPopups();
+});
+
+function buildConsonants() {
+  const grid = document.getElementById('kgrid');
+  CONSONANTS.forEach(function(item){
+    const g = String.fromCodePoint(item[0]);
+    const k = document.createElement('button');
+    k.className = 'key';
+    k.innerHTML = '<span class="kg">'+g+'</span><span class="kl">'+item[1]+'</span>';
+    k.addEventListener('pointerdown', function(e){ e.preventDefault(); ins(g); });
+    grid.appendChild(k);
+  });
+}
+
+function buildNums() {
+  const grid = document.getElementById('numgrid');
+  const items = [
+    ['0','0'],['1','1'],['2','2'],['3','3'],['4','4'],
+    ['5','5'],['6','6'],['7','7'],['8','8'],['9','9'],
+    ['\u060c','\u060c'],['\u061f','\u061f'],['\u061b','\u061b'],
+    ['.','.'],[',',','],['\u0021','!'],
+    ['"','"'],["'","'"],['\u2018','\u2018'],['\u2019','\u2019'],
+    ['-','-'],['_','_'],['@','@'],['#','#'],
+    ['\n','\u23ce'],
+  ];
+  items.forEach(function(item){
+    const k = document.createElement('button');
+    k.className = 'nkey'; k.textContent = item[1];
+    k.addEventListener('pointerdown', function(e){ e.preventDefault(); ins(item[0]); });
+    grid.appendChild(k);
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// EDITOR ACTIONS
+// ═══════════════════════════════════════════════════════
+function ins(ch) {
+  editor.focus();
+  const sel = window.getSelection();
+  if (sel && sel.rangeCount) {
+    const r = sel.getRangeAt(0); r.deleteContents();
+    const n = document.createTextNode(ch); r.insertNode(n);
+    r.setStartAfter(n); r.collapse(true);
+    sel.removeAllRanges(); sel.addRange(r);
+  } else { editor.textContent += ch; }
+  updateCount();
+}
+
+function del() {
+  editor.focus();
+  const sel = window.getSelection();
+  if (!sel || !sel.rangeCount) return;
+  const r = sel.getRangeAt(0);
+  if (!r.collapsed) { r.deleteContents(); }
+  else {
+    try {
+      const nr = r.cloneRange();
+      nr.setStart(r.startContainer, Math.max(0, r.startOffset - 1));
+      nr.deleteContents();
+    } catch(e) {}
+  }
+  updateCount();
+}
+
+function mv(d) {
+  editor.focus();
+  const sel = window.getSelection();
+  if (!sel || !sel.rangeCount) return;
+  const r = sel.getRangeAt(0);
+  try {
+    r.setStart(r.startContainer, Math.max(0, r.startOffset + d));
+    r.collapse(true); sel.removeAllRanges(); sel.addRange(r);
+  } catch(e) {}
+}
+
+function updateCount() {
+  document.getElementById('charct').textContent = [...(editor.textContent||'')].length;
+}
+
+function toggleLatin() {
+  latinMode = !latinMode;
+  const tog = document.getElementById('lat-tog');
+  if (latinMode) {
+    tog.textContent = 'LAT'; tog.classList.add('tog-on');
+    editor.classList.add('latin-mode'); editor.setAttribute('inputmode','text');
+    document.getElementById('kgrid').style.opacity='0.25';
+    document.getElementById('vowel-row').style.opacity='0.25';
+    document.getElementById('kgrid').style.pointerEvents='none';
+    document.getElementById('vowel-row').style.pointerEvents='none';
+  } else {
+    tog.textContent = t('lat_btn'); tog.classList.remove('tog-on');
+    editor.classList.remove('latin-mode'); editor.setAttribute('inputmode','none');
+    document.getElementById('kgrid').style.opacity='1';
+    document.getElementById('vowel-row').style.opacity='1';
+    document.getElementById('kgrid').style.pointerEvents='auto';
+    document.getElementById('vowel-row').style.pointerEvents='auto';
+  }
+  editor.focus();
+}
+
+function toggleNums() {
+  numsMode = !numsMode;
+  const tog = document.getElementById('num-tog');
+  const kg  = document.getElementById('kgrid');
+  const ng  = document.getElementById('numgrid');
+  const vr  = document.getElementById('vowel-row');
+  if (numsMode) {
+    tog.textContent = currentLang === 'en' ? 'ABC' : 'ABC'; tog.classList.add('tog-on');
+    kg.style.display='none'; vr.style.display='none'; ng.classList.add('show');
+  } else {
+    tog.textContent = t('num_btn'); tog.classList.remove('tog-on');
+    kg.style.display='grid'; vr.style.display='flex'; ng.classList.remove('show');
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// DUAL MODE
+// ═══════════════════════════════════════════════════════
+function toggleDual() {
+  dualMode = !dualMode;
+  const tog     = document.getElementById('dual-tog');
+  const hint    = document.getElementById('dual-hint');
+  const latinEl = document.getElementById('editor-latin');
+  if (dualMode) {
+    tog.classList.add('on'); hint.textContent = t('dual_hint_on');
+    latinEl.style.display='block'; editor.classList.add('dual');
+    latinEl.setAttribute('inputmode','text'); editor.setAttribute('inputmode','none');
+    latinEl.addEventListener('input', onLatinInput);
+    latinEl.focus();
+  } else {
+    tog.classList.remove('on'); hint.textContent = t('dual_hint_off');
+    latinEl.style.display='none'; editor.classList.remove('dual');
+    latinEl.removeEventListener('input', onLatinInput);
+    editor.focus();
+  }
+  tog.textContent = t('dual_btn');
+}
+
+function onLatinInput() {
+  clearTimeout(translitTimer);
+  translitTimer = setTimeout(function() {
+    const text = document.getElementById('editor-latin').textContent.trim();
+    if (!text) { editor.textContent = ''; updateCount(); return; }
+    editor.textContent = transliterate(text);
+    updateCount();
+  }, 300);
+}
+
+// ═══════════════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════════════
+function switchTab(name) {
+  ['write','trans','saved','karanta'].forEach(function(n){
+    const t2 = document.getElementById('tab-'+n);
+    const p  = document.getElementById('panel-'+n);
+    if (t2) t2.classList.remove('on');
+    if (p)  p.classList.remove('on');
+  });
+  document.getElementById('tab-'+name).classList.add('on');
+  document.getElementById('panel-'+name).classList.add('on');
+  if (name === 'saved')   loadSaved();
+  if (name === 'karanta') loadKaranta();
+  if (name === 'write')   { setTimeout(()=>editor.focus(), 100); }
+}
+
+// ═══════════════════════════════════════════════════════
+// TRANSLITERATE TAB
+// ═══════════════════════════════════════════════════════
+function doTranslit() {
+  const text = document.getElementById('tarea').value.trim();
+  if (!text) { toast(t('toast_write_1st')); return; }
+  document.getElementById('tresult').textContent = transliterate(text);
+}
+
+async function copyTranslit() {
+  const txt = document.getElementById('tresult').textContent;
+  if (!txt) { toast(t('toast_no_result')); return; }
+  try { await navigator.clipboard.writeText(txt); toast(t('toast_copy_ok')); }
+  catch(e) { toast(t('toast_copy_fail')); }
+}
+
+function sendToEditor() {
+  const txt = document.getElementById('tresult').textContent;
+  if (!txt) { toast(t('toast_no_result')); return; }
+  editor.textContent += txt; updateCount();
+  switchTab('write'); toast(t('toast_sent'));
+}
+
+function clearTranslit() {
+  document.getElementById('tarea').value = '';
+  document.getElementById('tresult').textContent = '';
+}
+
+// ═══════════════════════════════════════════════════════
+// DOCUMENT STORAGE
+// ═══════════════════════════════════════════════════════
+function getDocs() {
+  try { return JSON.parse(localStorage.getItem('bahaushe_docs') || '[]'); }
+  catch(e) { return []; }
+}
+
+function saveDoc() {
+  const title   = document.getElementById('doc-title').value.trim() || t('doc_default');
+  const content = editor.textContent || '';
+  const latin   = dualMode ? (document.getElementById('editor-latin').textContent || '') : '';
+  if (!content && !latin) { toast(t('toast_empty')); return; }
+  const docs = getDocs();
+  const now  = new Date().toLocaleDateString();
+  if (currentDocId) {
+    const idx = docs.findIndex(d => d.id === currentDocId);
+    if (idx > -1) docs[idx] = Object.assign(docs[idx], {title, content, latin, date:now});
+  } else {
+    currentDocId = Date.now().toString();
+    docs.unshift({id:currentDocId, title, content, latin, date:now});
+    if (docs.length > 50) docs.pop();
+  }
+  localStorage.setItem('bahaushe_docs', JSON.stringify(docs));
+  toast(t('toast_saved'));
+}
+
+function loadSaved() {
+  const docs = getDocs();
+  const list = document.getElementById('saved-list');
+  document.getElementById('doc-count').textContent = docs.length + t('docs_suffix');
+  if (docs.length === 0) {
+    const msg = t('saved_empty').replace(/\\n/g,'\n');
+    list.innerHTML = '<div class="saved-empty">'+escHtml(msg)+'</div>';
+    return;
+  }
+  list.innerHTML = '';
+  docs.forEach(function(doc){
+    const item = document.createElement('div'); item.className='doc-item';
+    const preview = (doc.content||'').slice(0,28);
+    const hasBoth = doc.latin && doc.content;
+    const info = document.createElement('div'); info.className='doc-info';
+    info.innerHTML =
+      '<div class="doc-name">'+escHtml(doc.title)+
+        (hasBoth?' <span style="font-size:9px;color:var(--red)">'+t('dual_btn').replace('\u229e ','')+'</span>':'')+
+      '</div>'+
+      '<div class="doc-preview">'+escHtml(preview)+'</div>'+
+      '<div class="doc-date">'+doc.date+'</div>';
+    const actions = document.createElement('div'); actions.className='doc-actions';
+    const readBtn = document.createElement('button'); readBtn.className='doc-del';
+    readBtn.style.cssText='background:var(--red-dim);border-color:var(--red)';
+    readBtn.textContent='\u25b6';
+    readBtn.addEventListener('pointerdown',function(e){ e.stopPropagation(); openDocInReader(doc.id); });
+    const delBtn = document.createElement('button'); delBtn.className='doc-del';
+    delBtn.textContent='\u2715';
+    delBtn.addEventListener('pointerdown',function(e){ e.stopPropagation(); deleteDoc(doc.id); });
+    actions.appendChild(readBtn); actions.appendChild(delBtn);
+    item.appendChild(info); item.appendChild(actions);
+    item.addEventListener('click',function(){ openDoc(doc.id); });
+    list.appendChild(item);
+  });
+}
+
+function openDoc(id) {
+  const doc = getDocs().find(d => d.id === id);
+  if (!doc) return;
+  currentDocId = id;
+  document.getElementById('doc-title').value = doc.title;
+  editor.textContent = doc.content || '';
+  if (doc.latin) {
+    if (!dualMode) toggleDual();
+    document.getElementById('editor-latin').textContent = doc.latin;
+  }
+  updateCount(); switchTab('write'); toast(t('toast_opened'));
+}
+
+function deleteDoc(id) {
+  const docs = getDocs().filter(d => d.id !== id);
+  localStorage.setItem('bahaushe_docs', JSON.stringify(docs));
+  if (currentDocId === id) currentDocId = null;
+  loadSaved(); toast(t('toast_deleted'));
+}
+
+function newDoc() {
+  currentDocId = null;
+  document.getElementById('doc-title').value = t('doc_default');
+  editor.textContent = ''; updateCount();
+  switchTab('write'); editor.focus(); toast(t('toast_new'));
+}
+
+// ═══════════════════════════════════════════════════════
+// READ (KARANTA) MODE
+// ═══════════════════════════════════════════════════════
+function loadKaranta() {
+  if (!currentReadDoc) {
+    document.getElementById('read-content').innerHTML =
+      '<div class="read-empty">'+escHtml(t('read_empty'))+'</div>';
+  }
+}
+
+function renderReadDoc(doc) {
+  currentReadDoc = doc;
+  const content = document.getElementById('read-content');
+  const fs = readFontSize;
+  const latinSection = doc.latin
+    ? '<div class="read-section-label">LATIN</div>'+
+      '<div class="read-latin-text" style="font-size:'+fs+'px">'+escHtml(doc.latin)+'</div>'
+    : '';
+  const bahausheSection = doc.bahaushe
+    ? '<div class="read-section-label">BAHAUSHE</div>'+
+      '<div class="read-bahaushe-text" style="font-size:'+fs+'px">'+escHtml(doc.bahaushe)+'</div>'
+    : '';
+  content.innerHTML =
+    '<div class="read-doc-title">'+escHtml(doc.title||'')+'</div>'+
+    latinSection + bahausheSection;
+  content.addEventListener('dblclick', function(){ enterEditFromRead(); });
+  let pressTimer;
+  content.addEventListener('pointerdown',function(){ pressTimer=setTimeout(enterEditFromRead,600); });
+  content.addEventListener('pointerup',  function(){ clearTimeout(pressTimer); });
+  content.addEventListener('pointerleave',function(){ clearTimeout(pressTimer); });
+}
+
+function enterEditFromRead() {
+  if (!currentReadDoc) return;
+  currentDocId = currentReadDoc.id || null;
+  document.getElementById('doc-title').value = currentReadDoc.title || t('doc_default');
+  if (currentReadDoc.latin && currentReadDoc.bahaushe) {
+    if (!dualMode) toggleDual();
+    document.getElementById('editor-latin').textContent = currentReadDoc.latin;
+    editor.textContent = currentReadDoc.bahaushe;
+  } else {
+    editor.textContent = currentReadDoc.bahaushe || currentReadDoc.latin || '';
+  }
+  updateCount(); switchTab('write'); toast(t('toast_edit'));
+}
+
+function updateReadSize(val) {
+  readFontSize = parseInt(val);
+  document.getElementById('read-size-val').textContent = val + 'px';
+  if (currentReadDoc) renderReadDoc(currentReadDoc);
+}
+
+function openDocInReader(id) {
+  const doc = getDocs().find(d => d.id === id);
+  if (!doc) return;
+  renderReadDoc({ id:doc.id, title:doc.title, latin:doc.latin||'', bahaushe:doc.content||'' });
+  switchTab('karanta');
+}
+
+function importJSON() { document.getElementById('json-import-input').click(); }
+
+function handleJSONImport(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const obj = JSON.parse(ev.target.result);
+      renderReadDoc({
+        id: null,
+        title:    (obj.meta && obj.meta.title) || file.name,
+        latin:    (obj.content && obj.content.latin)    || '',
+        bahaushe: (obj.content && obj.content.bahaushe) || '',
+      });
+      switchTab('karanta'); toast(t('toast_json_ok'));
+    } catch(err) { toast(t('toast_json_err')); }
+  };
+  reader.readAsText(file); e.target.value='';
+}
+
+// ═══════════════════════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════════════════════
+function savePDF() { switchTab('write'); setTimeout(()=>window.print(), 200); }
+
+function saveJSON() {
+  const title    = document.getElementById('doc-title').value.trim() || t('doc_default');
+  const bahaushe = editor.textContent || '';
+  const latin    = dualMode ? (document.getElementById('editor-latin').textContent||'') : '';
+  if (!bahaushe && !latin) { toast(t('toast_write_1st')); return; }
+  const obj = {
+    meta:{ title, version:'1.0', script:'BAHAUSHE', pua_range:'U+E000-U+E029', date:new Date().toISOString() },
+    content:{
+      latin, bahaushe,
+      codepoints: Array.from(bahaushe).map(c=>'U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0'))
+    }
+  };
+  const blob = new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href=url; a.download=title.replace(/\s+/g,'_')+'.bahaushe.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url); toast(t('toast_json_dl'));
+}
+
+// ═══════════════════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════════════════
+function escHtml(str) {
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>el.classList.remove('show'), 2400);
+}
+
+let delInterval, delTimeout;
+function startDel(e) {
+  e.preventDefault(); del();
+  delTimeout = setTimeout(()=>{ delInterval=setInterval(del,60); }, 400);
+}
+function stopDel() {
+  clearTimeout(delTimeout); clearInterval(delInterval); delTimeout=null; delInterval=null;
+}
+
+// ═══════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════
+function init() {
+  buildLogo();
+  buildVowels();
+  buildConsonants();
+  buildNums();
+  loadSaved();
+  editor.addEventListener('input', updateCount);
+  applyLang();
+  setTimeout(()=>editor.focus(), 200);
+}
+
+init();
+</script>
+</body>
+</html>
