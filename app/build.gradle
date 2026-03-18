@@ -5,22 +5,17 @@ plugins {
 
 android {
     namespace 'com.bahaushe.editor'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.bahaushe.editor"
         minSdk 21
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
-        debug {
-            applicationIdSuffix ".debug"
-            versionNameSuffix "-debug"
-            debuggable true
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -34,10 +29,6 @@ android {
 
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        buildConfig true
     }
 }
 
